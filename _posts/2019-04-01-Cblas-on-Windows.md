@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Cblas on Windows
 ---
 # Cblas on Windows

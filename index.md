@@ -1,8 +1,7 @@
 ---
 title: Blogging Like a Hacker
 ---
-#Building...
-
+# Building...
 <ul>
   {% for post in site.posts %}
     <li>
@@ -11,6 +10,5 @@ title: Blogging Like a Hacker
     </li>
   {% endfor %}
 </ul>
-=======
-# Building...
+
 

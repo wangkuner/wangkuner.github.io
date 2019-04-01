@@ -1,7 +1,6 @@
 ---
 title: Blogging Like a Hacker
 ---
-
 #Building...
 
 <ul>
@@ -12,3 +11,6 @@ title: Blogging Like a Hacker
     </li>
   {% endfor %}
 </ul>
+=======
+# Building...
+

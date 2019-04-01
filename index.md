@@ -1,5 +1,5 @@
 ---
-title: WANG Kun
+title: Wang Kun
 ---
 # Building...
 <ul>

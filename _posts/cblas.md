@@ -1,3 +1,7 @@
+---
+layout: post
+title: Cblas on Windows
+---
 # Cblas on Windows
  download the blas source and cblas source
  The minGW is needed on windows. The minGW-m64 is advanced.

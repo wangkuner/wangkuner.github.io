@@ -7,8 +7,11 @@ title: Wang Kun
     <li>
       {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
+
+      <h2>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h2>
+      <!-- {{ post.excerpt }} -->
     </li>
   {% endfor %}
 </ul>

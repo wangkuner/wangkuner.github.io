@@ -11,7 +11,7 @@ Enable NTPServer.
 2. Locate and then click the following registry subkey: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer**.
 3. Modify the value to be **1** to enable the ntp server.
 4. Run command `net stop w32time` as administrator if the w32time service is running.
-5. Run command `set start w32time` as administrator to start w32time service.
+5. Run command `net start w32time` as administrator to start w32time service.
 
 ## Synchronize the time on linux
 

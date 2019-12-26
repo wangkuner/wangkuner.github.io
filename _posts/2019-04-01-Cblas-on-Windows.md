@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Cblas on Windows
 ---
 # Cblas on Windows

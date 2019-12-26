@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Bits Problems in Crossplat Programming
 ---
 

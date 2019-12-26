@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="/assets/css/mystyle.css">
 </head>
 
-<body style="font-family: Helvetica">
+<body class="main-content" style="font-family: Helvetica">
     {{content}}
 </body>
 

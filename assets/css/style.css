@@ -5,3 +5,7 @@ body, head{
 h2{
     border-bottom: 1em;
 }
+
+.highlight{
+    font-family: Courier;
+}

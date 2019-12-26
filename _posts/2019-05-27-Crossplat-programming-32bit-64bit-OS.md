@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Bits Problems in Crossplat Programming
+description: scientific computation
 ---
-
-# Bits Problems in Crossplat Programming
 
 Size of some data types in different data models:
 

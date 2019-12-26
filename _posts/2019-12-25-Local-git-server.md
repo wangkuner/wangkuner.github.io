@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Local git server
+description: linux, git
 ---
 
 介绍如何在本地服务器(以下简称服务器)上给某个项目搭建git服务。

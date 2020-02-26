@@ -4,6 +4,8 @@ title: Cblas on Windows
 description: scientific computation
 ---
 
+# Cblas on Windows
+
  1. Download the [BLAS](http://www.netlib.org/blas/) source and [cBLAS](http://www.netlib.org/blas/) source and copy the `blas` folder into `cblas` folder. The directory tree is as following,
  ```
  +cblas

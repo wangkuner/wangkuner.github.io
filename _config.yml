@@ -4,7 +4,11 @@ title: [Wang Kun]
 description: [BIT]
 
 collections:
-  mechanics
-  programming
-  essay
-  publication
+  mechanics:
+    output: true
+  programming:
+    output: true
+  essay:
+    output: true
+  publication:
+    output: true

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 title: Bits Problems in Crossplat Programming
 description: scientific computation
 ---

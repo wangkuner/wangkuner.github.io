@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 title: Cblas on Windows
 description: scientific computation
 ---

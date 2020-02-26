@@ -1,0 +1,18 @@
+---
+layout: index
+title: Wang Kun
+---
+
+<ul>
+  {% for post in site.programming %}
+  <li style="border-bottom: solid 1px #eff0f1; padding-top: 2em;">
+    <!-- {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %} -->
+    <h2>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <!-- <hr style="height:1px;border:none;border-top:1px solid #555555;" /> -->
+    <!-- {{ post.excerpt }} -->
+  </li>
+  {% endfor %}
+</ul>

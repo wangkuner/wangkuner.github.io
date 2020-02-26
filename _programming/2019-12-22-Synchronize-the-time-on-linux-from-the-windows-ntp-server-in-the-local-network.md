@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 title: Synchronize the time on linux from the windows ntp server in the local network
 description: linux
 ---

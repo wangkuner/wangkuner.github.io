@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 title: Local git server
 description: linux, git
 ---

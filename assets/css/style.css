@@ -32,7 +32,7 @@ header{
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    background-image: url('./dc.jpg');
+    background-image: url('/images/head_photo.jpg');
     /* margin-left: 50px; */
     /* margin-bottom: 10px; */
     margin: 10px auto;

@@ -1,0 +1,93 @@
+html{
+    font-family: Helvetica;
+    /* overflow: hidden; */
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#header-container{
+    width: 200px;
+    height: 100%;
+    background-color:#e5e4db;
+    float: left;
+    margin: 0px;
+}
+header{
+    font-size: 18pt;
+    width: 200px;
+    /* height: 100%; */
+    /* float: left; */
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    /* padding-top: 200px; */
+}
+
+#profile-photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-image: url('./dc.jpg');
+    /* margin-left: 50px; */
+    /* margin-bottom: 10px; */
+    margin: 10px auto;
+}
+
+nav{
+    font-size: 12pt;
+    margin-bottom: 0em;
+    line-height:30px;
+    /* background-color:#eeeeee; */
+    height: auto;
+    width: 100%;
+    /* float: center; */
+    padding-top:25px;
+    padding-bottom:25px;
+    text-align: center;
+}
+
+a:link{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+a:visited{
+    color: #000000;
+}
+
+.external-link{
+    width: 32px;
+    height: 32px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.external-link:hover{
+    text-decoration: none;
+}
+
+#main{
+    width: 800px;
+    height: 100%;
+    float: left;
+    background-color:#f6f4ec;
+    overflow-y:scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#main::-webkit-scrollbar {
+    display: none;
+}
+
+article{
+    margin: 50px 20px 50px 40px;
+}

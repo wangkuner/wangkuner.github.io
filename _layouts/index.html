@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body>
+  <div id="header-container">
+    <header id="header">
+      <div id="profile-photo"></div>
+      WANG Kun
+
+      <nav id="nav">
+        <a href="#">Home</a><br/>
+        <a href="#">Mechanics</a><br/>
+        <a href="#">Programming</a><br/>
+        <a href="#">Essay</a><br/>
+        <a href="#">Publication</a><br/>
+      </nav>
+
+      <a class="external-link" href="https://github.com/wangkuner">
+        <svg height="32" class="octicon octicon-mark-github text-white" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+      <a class="external-link" href="mailto:wangkuner@outlook.com">
+        <svg t="1582710716303" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2012" width="32" height="32" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M128 768V301.248l361.344 361.376a32.032 32.032 0 0 0 45.312 0L896 301.248V768H128z m384-173.248L173.248 256h677.504L512 594.752zM64 832h896V192H64v640z" fill="#515151" p-id="2013"></path></svg>
+      </a>
+    </header>
+  </div>
+
+  <div id="main">
+    <article>
+      {{content}}
+    </article>
+  </div>
+
+</body>
+
+<script type="text/javascript">
+  var screenHeight=document.documentElement.clientHeight;
+  // var screenWidth=document.documentElement.clientWidth;
+  var header_containter=document.getElementById('header-container');
+  var header=document.getElementById('header');
+  // header_containter.style.height=screenHeight+'px';
+  // header.style.lineHeight=30+'px';
+  var nav_h=header.offsetHeight;
+  header.style.marginTop=screenHeight/2-nav_h/2+'px';
+  // header_containter.style.paddingTop=screenHeight/2-nav_h/2+'px';
+</script>
+
+</html>

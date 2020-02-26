@@ -1,4 +1,10 @@
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
 
 title: [Wang Kun]
 description: [BIT]
+
+collections:
+  mechanics
+  programming
+  essay
+  publication

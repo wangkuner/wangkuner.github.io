@@ -63,9 +63,16 @@ nav{
     color: #000000;
 }
 
-.external-link-container{
+#external-link-cell{
+    height: 32px;
+    margin: 0px auto;
+}
+
+.external-link-cell{
     width: 32px;
     height: 32px;
+    float: left;
+    padding: 0px 2px;
 }
 
 .external-link:hover{

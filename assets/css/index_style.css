@@ -93,13 +93,13 @@ article{
     font-size: 12pt;
 }
 
-/* .highlight{
-    overflow-x: auto;
-    border-radius: 5px;
-} */
+.highlight{
+    /* overflow-x: auto; */
+    border-radius: 10px;
+}
 
 .highlighter-rouge{
-    border-radius: 5px;
+    border-radius: 10px;
 
 }
 

@@ -120,9 +120,13 @@ code{
 }
 
 #education-table{
+    border: 0px;
+    border-collapse: separate;
     border-spacing: 10px;
 }
 
 #profile-table{
+    border: 0px;
+    border-collapse: separate;
     border-spacing: 5px;
 }

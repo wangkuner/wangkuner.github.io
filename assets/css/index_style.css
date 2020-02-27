@@ -51,23 +51,21 @@ nav{
     text-align: center;
 }
 
-a:link{
+.nav-link:link{
     color: black;
     text-decoration: none;
 }
-a:hover{
+.nav-link:hover{
     color: black;
     text-decoration: underline;
 }
-a:visited{
+.nav-link:visited{
     color: #000000;
 }
 
-.external-link{
+.external-link-container{
     width: 32px;
     height: 32px;
-    margin: 0px;
-    padding: 0px;
 }
 
 .external-link:hover{

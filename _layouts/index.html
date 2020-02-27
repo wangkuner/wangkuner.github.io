@@ -51,8 +51,11 @@
     var header=document.getElementById('header');
     var nav_h=header.offsetHeight;
     header.style.marginTop=screenHeight/2-nav_h/2+'px';
+    // if (screenWidth<=1000) {
+    //   document.getElementById('body').style.maxWidth=screenWidth-200+'px';
+    // }
     document.getElementById('body').style.maxWidth=screenWidth+'px';
-    document.getElementById('body').style.maxWidth=screenWidth-200+'px';
+    document.getElementById('main').style.maxWidth=screenWidth-200+'px';
   }
   verticalCenter();
 </script>

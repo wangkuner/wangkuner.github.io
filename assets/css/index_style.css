@@ -93,12 +93,21 @@ article{
     font-size: 12pt;
 }
 
-.highlight{
+/* .highlight{
     overflow-x: auto;
     border-radius: 5px;
+} */
+
+.highlighter-rouge{
+    border-radius: 5px;
+
+}
+
+pre.highlight{
+    padding-left: 10px;
+    overflow-x: auto;
 }
 
 code{
     font-size: 12pt;
-    padding-left: 10px;
 }

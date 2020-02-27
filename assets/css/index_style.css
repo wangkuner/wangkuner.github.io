@@ -113,3 +113,16 @@ pre.highlight{
 code{
     font-size: 12pt;
 }
+
+.profile-h2{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#education-table{
+    border-spacing: 10px;
+}
+
+#profile-table{
+    border-spacing: 5px;
+}

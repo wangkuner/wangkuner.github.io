@@ -139,6 +139,7 @@ code{
 
 .circle-img{
     border-radius: 50%;
+    overflow: hidden;
 }
 
 ul.indent-1{

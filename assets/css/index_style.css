@@ -61,7 +61,7 @@ nav{
 
 #external-link-container{
     height: 32px;
-    width: fit-content;
+    width: 80px; /* (32+8)*2 */
     margin: 0px auto;
 }
 
@@ -69,7 +69,7 @@ nav{
     width: 32px;
     height: 32px;
     float: left;
-    margin: 0em 0.25em;
+    margin: 0px 4px;
 }
 
 .external-link:hover{

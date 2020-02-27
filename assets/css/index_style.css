@@ -137,6 +137,10 @@ code{
     border-spacing: 5px;
 }
 
+.circle-img{
+    border-radius: 50%;
+}
+
 ul.indent-1{
     padding-left: 1em;
 }

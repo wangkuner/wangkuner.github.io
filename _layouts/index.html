@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/index_style.css">
 </head>
 
-<body>
+<body id="body" onchange="verticalCenter()">
   <div id="header-container">
     <header id="header">
       <div id="profile-photo"></div>
@@ -40,14 +40,18 @@
 </body>
 
 <script type="text/javascript">
-  var screenHeight=document.documentElement.clientHeight;
-  // var screenWidth=document.documentElement.clientWidth;
-  var header_containter=document.getElementById('header-container');
-  var header=document.getElementById('header');
-  // header_containter.style.height=screenHeight+'px';
-  // header.style.lineHeight=30+'px';
-  var nav_h=header.offsetHeight;
-  header.style.marginTop=screenHeight/2-nav_h/2+'px';
+  void function verticalCenter() {
+    var screenHeight=document.documentElement.clientHeight;
+    var screenWidth=document.documentElement.clientWidth;
+    var header_containter=document.getElementById('header-container');
+    var header=document.getElementById('header');
+    var body=document.getElementById('body');
+    // header_containter.style.height=screenHeight+'px';
+    // header.style.lineHeight=30+'px';
+    var nav_h=header.offsetHeight;
+    header.style.marginTop=screenHeight/2-nav_h/2+'px';
+    body.style.maxWidth=screenWidth+'px';
+  }
   // header_containter.style.paddingTop=screenHeight/2-nav_h/2+'px';
 </script>
 

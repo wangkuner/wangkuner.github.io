@@ -95,6 +95,10 @@ article{
     font-size: 12pt;
 }
 
+ul.none{
+    list-style-type: none;
+}
+
 .highlight{
     /* overflow-x: auto; */
     border-radius: 10px;

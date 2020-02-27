@@ -3,14 +3,14 @@ layout: index
 title: Wang Kun
 ---
 
+{% assign sorted-posts = site.publication | sort: 'date' | reverse %}
 <ul class="none">
-  {% for post in site.publication %}
+  {% for post in sorted-posts %}
   <li style="border-bottom: solid 1px #808080; padding-top: 2em;">
     <h2>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </h2>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <!-- {{ post.excerpt }} -->
   </li>
   {% endfor %}
 </ul>

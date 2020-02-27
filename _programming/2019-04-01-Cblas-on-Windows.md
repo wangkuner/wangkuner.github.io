@@ -18,7 +18,6 @@ description: scientific computation
  2. The minGW is needed on windows. The [minGW-m64](https://mingw-w64.org) is advanced.
  3. The file `xerbla.f` in `blas` directory is overrided by the corresponding c file in `src` directory so it should be remove away.
  4. The BLAS are written in fortran so it should be compiled by fortran compilers such as `gfortran`. The cBLAS is the c interface for call blas from c and it should be compiled by c compilers such as `gcc`. The library should be linked by `gfortran` compilers. Run the following `makefile` script in the root directory and the library file `cblas_x86_64.dll`, `cblas_x86_64.lib`, `cblas_x86_64.def` would be obtained. 
-
 ```makefile
 DIR_SRC=./src
 DIR_CBLAS_SRC=./cblas

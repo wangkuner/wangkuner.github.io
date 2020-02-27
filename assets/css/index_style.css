@@ -1,6 +1,5 @@
 html{
     font-family: Helvetica;
-    /* overflow: hidden; */
     height: 100%;
 }
 
@@ -95,12 +94,15 @@ article{
     font-size: 12pt;
 }
 
+h1{
+    margin-bottom: 1em;
+}
+
 ul.none{
     list-style-type: none;
 }
 
 .highlight{
-    /* overflow-x: auto; */
     border-radius: 10px;
 }
 
@@ -118,9 +120,9 @@ code{
     font-size: 12pt;
 }
 
-.profile-h2{
-    margin-top: 1em;
-    margin-bottom: 1em;
+.profile-h2 h2{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 #education-table{
@@ -133,4 +135,12 @@ code{
     border: 0px;
     border-collapse: separate;
     border-spacing: 5px;
+}
+
+ul.indent-1{
+    padding-left: 1em;
+}
+
+ol{
+    padding-left: 1.5em;
 }

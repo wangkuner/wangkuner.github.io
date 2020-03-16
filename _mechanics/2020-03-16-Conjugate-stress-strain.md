@@ -10,25 +10,25 @@ In the case of large deformation, many kinds of stress, e.g. the Cauchy stress, 
 
 ## Tensor algebra
 
-<p>$\mathbf{A}$, $\mathbf{B}$ are second order tensors.
+$\mathbf{A}$, $\mathbf{B}$ are second order tensors.
 Tensor dot product is defined as 
 \begin{equation}
     (\mathbf{A}\mathbf{B})_{ij}=a_{ik}b_{kj},
 \end{equation}
-which is equivalent to matrix prodoct.</p>
+which is equivalent to matrix prodoct.
 
 Tensor double product is defined as
 \begin{equation}
     \mathbf{A}:\mathbf{B}=\mathrm{tr}(\mathbf{A}^{T}\mathbf{B}).
 \end{equation}
-<p>The tensor double product has the following properties,
+The tensor double product has the following properties,
 \begin{equation}\label{double-product}
     \left\{\begin{array}{l}
         \mathbf{A}:\mathbf{B}=\mathrm{tr}(\mathbf{A}^{T}\mathbf{B}) = \mathrm{tr}(\mathbf{B}\mathbf{A}^{T}) = \mathrm{tr}(\mathbf{B}^{T}\mathbf{A}) = \mathrm{tr}(\mathbf{A}\mathbf{B}^{T}) = \sum\limits_{i,j=1}^{3}a_{ij}b_{ij}.\\
         \mathbf{A}:(\mathbf{B}\mathbf{C}) = (\mathbf{A}\mathbf{C}^{T}):\mathbf{B} = (\mathbf{B}^{T}\mathbf{A}):\mathbf{C}
     \end{array}\right.
 \end{equation}
-</p>
+
 ## Conjugate stresses associated with strain: energy aspect
 
 The position of a material point on a body in reference configuration is denoted as $\mathbf{X}$ and 

@@ -10,5 +10,3 @@ collections:
     output: true
   essay:
     output: true
-  publication:
-    output: true

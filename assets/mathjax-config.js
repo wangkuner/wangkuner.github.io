@@ -3,11 +3,12 @@ window.MathJax = {
   tex: {
     packages: ['base'],        // extensions to use
     inlineMath: [              // start/end delimiter pairs for in-line math
-      ['\\(', '\\)']
+      ['$', '$']
     ],
     displayMath: [             // start/end delimiter pairs for display math
       ['$$', '$$'],
-      ['\\[', '\\]']
+      ['\\[', '\\]'],
+      ['\begin', '\end']
     ],
     processEscapes: true,      // use \$ to produce a literal dollar sign
     processEnvironments: false, // process \begin{xxx}...\end{xxx} outside math mode
@@ -16,13 +17,13 @@ window.MathJax = {
                                // pattern for recognizing numbers
     tags: 'ams',              // or 'ams' or 'all'
     tagSide: 'right',          // side for \tag macros
-    tagIndent: '0.8em',        // amount to indent tags
-    useLabelIds: true,         // use label name rather than tag for ids
-    multlineWidth: '85%',      // width of multline environment
-    maxMacros: 1000,           // maximum number of macro substitutions per expression
-    maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
-    baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
-       (document.getElementsByTagName('base').length === 0) ?
-        '' : String(document.location).replace(/#.*$/, '')
+    // tagIndent: '0.8em',        // amount to indent tags
+    // useLabelIds: true,         // use label name rather than tag for ids
+    // multlineWidth: '85%',      // width of multline environment
+    // maxMacros: 1000,           // maximum number of macro substitutions per expression
+    // maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
+    // baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
+    //    (document.getElementsByTagName('base').length === 0) ?
+    //     '' : String(document.location).replace(/#.*$/, '')
   }
 };

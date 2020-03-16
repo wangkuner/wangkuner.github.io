@@ -4,15 +4,19 @@ title: Conjugate stresses associated with strain
 ---
 # Conjugate stresses associated with strain[1]
 
+*First published on 2020-3-16*
+
 In the case of large deformation, many kinds of stress, e.g. the Cauchy stress, the first and second Piola-Kirchhoff stress, and strain e.g. the Green-Lagrange strain, are defined. Some of these stresses and strain are defined in the reference configuration and others are defined in the current configuration(deformed configuration). It is critical to define the stress associated with the strain to derive the energy of the interior elastic forces.
 
 ## Tensor algebra
 
 $\mathbf{A}$, $\mathbf{B}$ are second order tensors.
 Tensor dot product is defined as 
+
 \begin{equation}
     (\mathbf{A}\mathbf{B})_{ij}=a_{ik}b_{kj},
 \end{equation}
+
 which is equivalent to matrix prodoct.
 
 Tensor double product is defined as
@@ -20,6 +24,7 @@ Tensor double product is defined as
     \mathbf{A}:\mathbf{B}=\mathrm{tr}(\mathbf{A}^{T}\mathbf{B}).
 \end{equation}
 The tensor double product has the following properties,
+
 \begin{equation}\label{double-product}
     \left\{\begin{array}{l}
         \mathbf{A}:\mathbf{B}=\mathrm{tr}(\mathbf{A}^{T}\mathbf{B}) = \mathrm{tr}(\mathbf{B}\mathbf{A}^{T}) = \mathrm{tr}(\mathbf{B}^{T}\mathbf{A}) = \mathrm{tr}(\mathbf{A}\mathbf{B}^{T}) = \sum\limits_{i,j=1}^{3}a_{ij}b_{ij}.\\

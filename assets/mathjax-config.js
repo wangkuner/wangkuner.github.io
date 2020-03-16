@@ -23,6 +23,6 @@ window.MathJax = {
     maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
     baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
        (document.getElementsByTagName('base').length === 0) ?
-        '' : String(document.location).replace(/#.*$/, ''))
+        '' : String(document.location).replace(/#.*$/, '')
   }
 };

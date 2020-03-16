@@ -1,7 +1,6 @@
 ---
 layout: index
 title: Conjugate stresses associated with strain
-# usemathjax: true
 ---
 # Conjugate stresses associated with strain[1]
 

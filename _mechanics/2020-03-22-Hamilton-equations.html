@@ -28,7 +28,7 @@ The Legendre transformation of the convex function $f(x)$ is another function $g
 $g(p)=\max_{x}F(p,x)$, where $F(p,x)=px-f(x)$.
 
 The function $F(p,x)$ gets the maximum with respect to $x$ only when $\partial F/\partial x =0$ 
-which means $p = f'(x)$. So, the transformation of the function $x$ is 
+which means $p = f'(x)$. So, the Legendre transformation of the function $f(x)$ is 
 \begin{equation}
         g(p) = px-f(x),\ p=f'(x)
 \end{equation}
@@ -44,7 +44,7 @@ its Legendre transformation is defined as
         g(\mathbf{p}) = \mathbf{p}^{T}\mathbf{x}-f(\mathbf{x}),\ \mathbf{p}=f'(\mathbf{x})
 \end{equation}
 
-<h2>Hamiltonian</h2>
+<h2>Hamiltonian and Hamilton equations</h2>
 
 The Legendre transformation of the Lagrangian $L(\mathbf{q},\dot{\mathbf{q}},t)$ is  
 \begin{equation}
@@ -68,8 +68,8 @@ The two equations are equivalent, so
 \begin{equation}
     \dot{\mathbf{q}}=\frac{\partial H}{\partial \mathbf{p}},\ \frac{\partial H}{\partial \mathbf{q}}=-\frac{\partial L}{\partial \mathbf{q}},\ \frac{\partial H}{\partial t}=-\frac{\partial H}{\partial t}.
 \end{equation}
-Combining with the Lagrange equation and $\mathbf{p}=\frac{\partial L}{\partial \dot{\mathbf{q}}}$, one can obtain the Hamilton equations.
-
+Combining with the Lagrange equation and $\mathbf{p}=\partial L / \partial \dot{\mathbf{q}}$, one can obtain the Hamilton equations.
+<br/>
 The Euler's homogeneous function theorem for quadric form $f(\mathbf{x})$ is 
 \begin{equation}
     \mathbf{x}^{T}\frac{\partial f}{\partial \mathbf{x}}=2f

@@ -8,12 +8,8 @@ description: scientific computation
 
 Size of some data types in different data models:
 <style>
-.tablelines table, .tablelines td, .tablelines th {
-        border: 1px solid black;
-        }
-.tablecells table, .tablelines td {
-        padding: 2em;
-        }
+.tablelines table, .tablelines td, .tablelines th {border: 1px solid black;}
+.tablecells table, .tablelines td {padding-left: 1em; padding-right: 1em;}
 </style>
 
 | data type | ILP32 | LP64 | LLP64 | ILP64 |

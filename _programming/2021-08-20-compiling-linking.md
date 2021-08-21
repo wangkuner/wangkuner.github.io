@@ -33,9 +33,8 @@ description: linking, dll
 `C`语言调用惯例：
 
 <style>
-.tablelines table, .tablelines td, .tablelines th {
-        border: 1px solid black;
-        }
+.tablelines table, .tablelines td, .tablelines th {border: 1px solid black;}
+.tablecells table, .tablelines td {padding-left: 1em; padding-right: 1em;}
 </style>
 
 | Calling conventino | 参数入栈方式 | 参数出栈执行者 | 名字修饰 | 备注 |
@@ -44,7 +43,7 @@ description: linking, dll
 | `stdcall`          | 从右到左     | 函数本身       | _name@byteofparameters | Windows API调用方式 |
 | `fastcall`         | 从右到左     | 函数本身       | @name@byteofparameters | |
 | `pascal`           | 从左到右     | 函数本身       |  | |
-{:.tablelines}
+{: .tablelines .tablecells}
 
 `C++`有独特的名字修饰策略
 

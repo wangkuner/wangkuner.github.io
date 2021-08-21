@@ -37,14 +37,15 @@ description: linking, dll
 .tablecells table, .tablelines td {padding-left: 1em; padding-right: 1em;}
 </style>
 
-| Calling conventino | 参数入栈方式 | 参数出栈执行者 | 名字修饰 | 备注 |
-|:------------------:|:------------:|:--------------:|:---------|:-----|
-| `cdecl`            | 从右到左     | 函数调用方     | _name | C语言默认调用方式 |
-| `stdcall`          | 从右到左     | 函数本身       | _name@byteofparameters | Windows API调用方式 |
-| `fastcall`         | 从右到左     | 函数本身       | @name@byteofparameters | |
-| `pascal`           | 从左到右     | 函数本身       |  | |
+| Calling conventino | 参数入栈方式 | 参数出栈执行者 | 名字修饰 |
+|:------------------:|:------------:|:--------------:|:---------|
+| `cdecl`            | 从右到左     | 函数调用方     | _name |
+| `stdcall`          | 从右到左     | 函数本身       | _name@byteofparameters |
+| `fastcall`         | 从右到左     | 函数本身       | @name@byteofparameters |
+| `pascal`           | 从左到右     | 函数本身       |  |
 {: .tablelines .tablecells}
 
+`cdecl`为C语言默认调用方式，Windows API调用方式为`stdcall`。
 `C++`有独特的名字修饰策略
 
 程序的入口函数可以在链接时指定，`gcc`中由参数`-e`指定。

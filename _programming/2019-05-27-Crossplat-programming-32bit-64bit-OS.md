@@ -7,6 +7,14 @@ description: scientific computation
 # Bits Problems in Crossplat Programming
 
 Size of some data types in different data models:
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+        border: 1px solid black;
+        }
+.tablecells table, .tablelines td {
+        padding: 2em;
+        }
+</style>
 
 | data type | ILP32 | LP64 | LLP64 | ILP64 |
 |:---------:|:-----:|:----:|:-----:|:-----:|
@@ -16,6 +24,7 @@ Size of some data types in different data models:
 | float     |   32  |  32  |  64   |  64   |
 | double    |   64  |  64  |  64   |  64   |
 | pointer   |   32  |  64  |  64   |  64   |
+{: .tablelines .tablecells}
 
 64-bit windows system uses LLP64 model. Most 64-bit unix and unix-like system uses LP64 model.
 

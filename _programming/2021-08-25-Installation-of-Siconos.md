@@ -1,12 +1,12 @@
 ---
 layout: index
 title: Installation of Siconos
-description: linking, dll
+description: Siconos
 ---
 
 # Installation of Siconos
 
-Siconos is an open-source scientific software primarily targeted at modeling and simulating nonsmooth dynamical systems in C++ and in Pytho.
+Siconos is an open-source scientific software primarily targeted at modeling and simulating nonsmooth dynamical systems in C++ and in Python.
 
 According to the requirements, only the essential components, *externals*, *numerics* and *kernel*, are installed. 
 It can be seen from the following picture that the components *numerics and *kernel* depend on *externals*. 

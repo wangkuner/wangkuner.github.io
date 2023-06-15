@@ -17,24 +17,24 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"wangkuner.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。 进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。 地址重定位：编译时给程序中符号一个虚假的地址，在链接时根据地址偏移将符">
+  <meta name="description" content="不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。 进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="程序编译与链接">
-<meta property="og:url" content="http://example.com/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/index.html">
+<meta property="og:url" content="https://wangkuner.github.io/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/index.html">
 <meta property="og:site_name" content="Wang Kun">
-<meta property="og:description" content="不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。 进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。 地址重定位：编译时给程序中符号一个虚假的地址，在链接时根据地址偏移将符">
+<meta property="og:description" content="不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。 进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-15T12:52:46.527Z">
+<meta property="article:modified_time" content="2023-06-15T13:37:19.737Z">
 <meta property="article:author" content="王坤">
 <meta property="article:tag" content="Program linking">
 <meta property="article:tag" content="DLL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/">
+<link rel="canonical" href="https://wangkuner.github.io/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/">
 
 
 <script id="page-configurations">
@@ -101,7 +101,6 @@
       <h1 class="site-title">Wang Kun</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">c/c++</p>
   </div>
 
   <div class="site-nav-right">
@@ -153,12 +152,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/">
+    <link itemprop="mainEntityOfPage" href="https://wangkuner.github.io/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="王坤">
-      <meta itemprop="description" content="patience is love">
+      <meta itemprop="description" content="multibody system dynamics, c/c++, scientific computation">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -183,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-15 20:52:46" itemprop="dateModified" datetime="2023-06-15T20:52:46+08:00">2023-06-15</time>
+                <time title="修改时间：2023-06-15 21:37:19" itemprop="dateModified" datetime="2023-06-15T21:37:19+08:00">2023-06-15</time>
               </span>
 
           
@@ -199,6 +198,8 @@
       
         <p>不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。</p>
 <p>进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。</p>
+<span id="more"></span>
+
 <p>地址重定位：编译时给程序中符号一个虚假的地址，在链接时根据地址偏移将符号地址重定位，即赋予真是的虚拟内存地址。</p>
 <p>动态链接库装载时重定位：程序在链接时不会重定位符号地址，在装载时会有动态链接器来进行动态库的地址重定位。</p>
 <p><strong>PIC</strong>: Position Independent Code, 地址无关代码。</p>
@@ -278,8 +279,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/16/Conjugate-stresses-associated-with-strain/" rel="prev" title="Conjugate stresses associated with strain">
-      <i class="fa fa-chevron-left"></i> Conjugate stresses associated with strain
+    <a href="/2020/12/20/%E3%80%8A%E5%B1%80%E5%A4%96%E4%BA%BA%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="《局外人》读书笔记">
+      <i class="fa fa-chevron-left"></i> 《局外人》读书笔记
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/08/25/Siconos%E5%AE%89%E8%A3%85/" rel="next" title="Siconos安装">
@@ -349,7 +350,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">王坤</p>
-  <div class="site-description" itemprop="description">patience is love</div>
+  <div class="site-description" itemprop="description">multibody system dynamics, c/c++, scientific computation</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -443,6 +444,8 @@
 
 
 
+
+  
 
   
 

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="In the case of large deformation, many kinds of stress, e.g. the Cauchy stress, the first and second Piola-Kirchhoff stress, and strain e.g. the Green-Lagrange strain, are defined. Some of these stre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Conjugate stresses associated with strain">
+<meta property="og:url" content="http://example.com/2020/03/16/Conjugate-stresses-associated-with-strain/index.html">
+<meta property="og:site_name" content="Wang Kun">
+<meta property="og:description" content="In the case of large deformation, many kinds of stress, e.g. the Cauchy stress, the first and second Piola-Kirchhoff stress, and strain e.g. the Green-Lagrange strain, are defined. Some of these stre">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-15T12:48:23.039Z">
+<meta property="article:author" content="王坤">
+<meta property="article:tag" content="Mechanics">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/03/16/Conjugate-stresses-associated-with-strain/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Conjugate stresses associated with strain | Wang Kun</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Wang Kun</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">c/c++</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/16/Conjugate-stresses-associated-with-strain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="王坤">
+      <meta itemprop="description" content="patience is love">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wang Kun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Conjugate stresses associated with strain
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-16T00:00:00+08:00">2020-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-15 20:48:23" itemprop="dateModified" datetime="2023-06-15T20:48:23+08:00">2023-06-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p> In the case of large deformation, many kinds of stress, e.g. the Cauchy stress, the first and second Piola-Kirchhoff stress, and strain e.g. the Green-Lagrange strain, are defined. Some of these stresses and strain are defined in the reference configuration and others are defined in the current configuration(deformed configuration). It is critical to define the stress associated with the strain to derive the energy of the interior elastic forces.</p>
+
+<h2> Tensor algebra </h2>
+
+<p>$\mathbf{A}$, $\mathbf{B}$ are second order tensors.<br>Tensor dot product is defined as<br>\begin{equation}<br>    (\mathbf{A}\mathbf{B})<em>{ij}&#x3D;a</em>{ik}b_{kj},<br>\end{equation}<br>which is equivalent to matrix prodoct.</p>
+<p>Tensor double product is defined as<br>\begin{equation}<br>    \mathbf{A}:\mathbf{B}&#x3D;\mathrm{tr}(\mathbf{A}^{T}\mathbf{B}).<br>\end{equation}<br>The tensor double product has the following properties,<br>\begin{equation}\label{double-product}<br>    \left{\begin{array}{l}<br>        \mathbf{A}:\mathbf{B}&#x3D;\mathrm{tr}(\mathbf{A}^{T}\mathbf{B}) &#x3D; \mathrm{tr}(\mathbf{B}\mathbf{A}^{T}) &#x3D; \mathrm{tr}(\mathbf{B}^{T}\mathbf{A}) &#x3D; \mathrm{tr}(\mathbf{A}\mathbf{B}^{T}) &#x3D; \sum\limits_{i,j&#x3D;1}^{3}a_{ij}b_{ij}.\<br>        \mathbf{A}:(\mathbf{B}\mathbf{C}) &#x3D; (\mathbf{A}\mathbf{C}^{T}):\mathbf{B} &#x3D; (\mathbf{B}^{T}\mathbf{A}):\mathbf{C}<br>    \end{array}\right.<br>\end{equation}</p>
+<h2> Conjugate stresses associated with strain: energy aspect </h2>
+
+<p>The position of a material point on a body in reference configuration is denoted as $\mathbf{X}$ and<br>in the current configuration (deformed) is $\mathbf{x}$. The motion of the point can be written as<br>\begin{equation}<br>    \mathbf{x}&#x3D;\mathbf{X}+\mathbf{u}<br>\end{equation}<br>where $\mathbf{u}$ is the displacement vector. The position gradient is defined as<br>\begin{equation}<br>    \mathbf{J} &#x3D; \frac{\mathrm{d}\mathbf{x}}{\mathrm{d}\mathbf{X}},<br>\end{equation}<br>which means<br>\begin{equation}<br>    \mathrm{d}\mathbf{x}&#x3D; \mathbf{J}\mathrm{d}\mathbf{X}.<br>\end{equation}</p>
+<p>The equations of equilibrium established in the current configuration is<br>\begin{equation}<br>    \left(\nabla\boldsymbol{\sigma}^{T}\right)^{T} + \mathbf{f}<em>{b} - \rho\ddot{\mathbf{u}} &#x3D; \mathbf{0},<br>\end{equation}<br>where $\nabla&#x3D;\frac{\partial}{\partial \mathbf{x}}&#x3D;\left[\begin{array}{lll}<br>    \frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z}\end{array}\right]$<br>is defined in the current configuration. $\boldsymbol{\sigma}$ is the Cauchy stress (the physical or true stress defined on the deformed configuration) tensor.<br>$\mathbf{f}</em>{b}$ is body forces and $\rho\ddot{\mathbf{u}}$ is inertia forces.</p>
+<p>According to virtual work principle, the weak form of the equilibrium equations are written as<br>\begin{equation}\label{weak}<br>    \int_{v}\left[\left(\nabla\boldsymbol{\sigma}^{T}\right)^{T} + \mathbf{f}_{b} - \rho\ddot{\mathbf{u}}\right]^{T}\delta \mathbf{u}\mathrm{d}v &#x3D; 0.<br>\end{equation}</p>
+<p>One can show that<br>\begin{equation}<br>    \nabla(\boldsymbol{\sigma}\delta \mathbf{u})&#x3D;(\nabla\boldsymbol{\sigma})\delta\mathbf{u} + \boldsymbol{\sigma}:\frac{\partial(\delta\mathbf{u})}{\partial\mathbf{x}},<br>\end{equation}<br>where<br>\begin{equation}<br>    \frac{\partial(\delta\mathbf{u})}{\partial x} &#x3D; \frac{\partial(\delta\mathbf{u})}{\partial\mathbf{X}}\frac{\partial\mathbf{X}}{\partial\mathbf{x}} &#x3D; \delta\frac{\partial\mathbf{x}}{\partial\mathbf{X}}\mathbf{J}^{-1} &#x3D; (\delta\mathbf{J})\mathbf{J}^{-1},<br>\end{equation}<br>because of $\delta\mathbf{u}&#x3D;\delta\mathbf{x}$.</p>
+<p>Substituting the preceeding two equations into Eq.(\ref{weak}) and using Gauss theorem, we can obtain<br>\begin{equation}<br>    \int_{s}\mathbf{n}^{T}\boldsymbol{\sigma}\delta\mathbf{u}ds - \int_{v}\boldsymbol{\sigma}:(\delta\mathbf{J})\mathbf{J}^{-1}dv + \int_{v}\left(\mathbf{f}<em>{b}-\rho\ddot{\mathbf{u}}\right)^{T}\delta\mathbf{u}dv&#x3D;0,<br>\end{equation}<br>where $s$ is the surface area and $\mathbf{n}$ is unit normal to the surface.<br>The second integral is the virtual work of the internal elastic forces and is defined as<br>\begin{equation}\label{interior-energy}<br>    \delta W</em>{int} &#x3D; -\int_{v}\boldsymbol{\sigma}:(\delta\mathbf{J})\mathbf{J}^{-1}dv.<br>\end{equation}<br>The volumes of amaterial element in the reference configuration $dV$ and current configuration $dv$ are related by<br>\begin{equation}<br>    dv&#x3D;JdV,<br>\end{equation}<br>where $J&#x3D;\mathrm{det}(\mathbf{J})$. The Eq.(\ref{interior-energy}) can be written as<br>\begin{equation}\label{interior-energy-reference}<br>    \delta W_{int} &#x3D; -\int_{V}J\boldsymbol{\sigma}:(\delta\mathbf{J})\mathbf{J}^{-1}dV.<br>\end{equation}<br>The tensor $\boldsymbol{\sigma}_{K}&#x3D;J\boldsymbol{\sigma}$ is called the Kirchhoff stress tensor.</p>
+<p>Subsequent derivations need Nanson’s formula which is represented as<br>\begin{equation}\label{nanson}<br>    \mathbf{N}&#x3D;\frac{1}{J}\mathbf{J}^{T}\mathbf{n}\frac{\mathrm{d}s}{\mathrm{d}S},<br>\end{equation}<br>where $\mathbf{N}$ is a unit normal to the surface in the reference configuration and $\mathbf{n}$ is the corresponding vector in the current configuration.<br>$dS$ is the element area in the reference configuration and $ds$ is the corresponding area in the current configuration.</p>
+<p>Based on the Cauthy stress formula $\boldsymbol{\sigma}<em>{n}&#x3D;\boldsymbol{\sigma}\mathbf{n}$<br>where $\boldsymbol{\sigma}</em>{n}$ is the surface traction,<br>the force acting on a surface with a unit normal $\mathbf{n}$ is<br>\begin{equation}\label{force}<br>    \mathbf{f}&#x3D;\boldsymbol{\sigma}\mathbf{n}ds.<br>\end{equation}<br>Substituting the Nanson’s formula into Eq.(\ref{force}),<br>we can obtain the force written in terms of the normal and area defined in the reference configuration as<br>\begin{equation}\label{force-reference}<br>    \mathbf{f}&#x3D;J\boldsymbol{\sigma}(\mathbf{J}^{T})^{-1}\mathbf{N}dS.<br>\end{equation}<br>From Eq.(\ref{force-reference}), we can define another stress measure, the so called first Piola-Kirchhoff(PK) stress,<br>\begin{equation}<br>    \boldsymbol{\sigma}<em>{PK1}&#x3D;J\boldsymbol{\sigma}(\mathbf{J}^{T})^{-1}.<br>\end{equation}<br>The first Piola-Kirchhoff stress can be used to define tractions in terms of the normal and area<br>in the reference configuration but it is not a symmetric tensor.<br>Combining Eq.(\ref{double-product}), we can write the virtual work of the internal elastic forces in terms of<br>the first PK stress as<br>\begin{equation}\label{interior-energy-PK1}<br>    \delta W</em>{int} &#x3D; -\int_{V}\boldsymbol{\sigma}<em>{PK1}:\delta\mathbf{J}dV.<br>\end{equation}<br>Eq.(\ref{interior-energy-PK1}) shows that the first PK stress $\boldsymbol{\sigma}</em>{PK1}$ is associated<br>with the matrix of the position vector gradients $\mathbf{J}$.</p>
+<p>The Green–Lagrange strain tensor is defined as<br>\begin{equation}<br>    \boldsymbol{\epsilon} &#x3D; \frac{1}{2}\left(\mathbf{J}^{T}\mathbf{J}-\mathbf{I}\right)<br>\end{equation}<br>The variation of the  Green–Lagrange strain is<br>\begin{equation}<br>    \delta\boldsymbol{\epsilon} &#x3D; \frac{1}{2}\left(\mathbf{J}^{T}\delta\mathbf{J} + \delta\left(\mathbf{J}^{T}\right)\mathbf{J}\right).<br>\end{equation}<br>Using the identities of Eq.(\ref{double-product}) we can write the virtual work of the internal elastic forces in terms of<br>the Green–Lagrange strain as<br>\begin{equation}\label{interior-energy-C-G-strain}<br>    \delta W_{int} &#x3D; -\int_{V}J\boldsymbol{\sigma}:(\mathbf{J}^{-1})^{T}\delta\boldsymbol{\epsilon}\mathbf{J}^{-1}dV.<br>\end{equation}<br>Using the properties of the tensor double product(Eq.(\ref{double-product})), we can rewrite Eq.(\ref{interior-energy-C-G-strain}) as<br>\begin{equation}\label{interior-energy-PK2}<br>    \delta W_{int} &#x3D; -\int_{V}\left(J\mathbf{J}^{-1}\boldsymbol{\sigma}(\mathbf{J}^{-1})^{T}\right):\delta\boldsymbol{\epsilon}dV &#x3D; \int_{V}\boldsymbol{\sigma}<em>{PK2}:\delta\boldsymbol{\epsilon}dV.<br>\end{equation}<br>where $\boldsymbol{\sigma}</em>{PK2}$ is the second Piola–Kirchhoff stress tensor defined as<br>\begin{equation}\label{PK2}<br>    \boldsymbol{\sigma}_{PK2} &#x3D; J\mathbf{J}^{-1}\boldsymbol{\sigma}(\mathbf{J}^{-1})^{T}<br>\end{equation}</p>
+<p>The Cauchy stress tensor is not associated with the Green–Lagrange strain tensor<br>because the Cauchy stress tensor is defined in the current (deformed) configuration,<br>whereas the Green–Lagrange strain tensor is defined in the reference configuration.<br>According to Eq.(\ref{interior-energy-reference}), the Cauchy stress is associated with $\dot{\mathbf{J}}\mathbf{J}$.<br>Eq.(\ref{interior-energy-PK1}) shows that the first Piola-Kirchhoff stress is associated with the deformation gradient.<br>However, the deformation gradient matrix $\mathbf{J}$ does not remain constant under an arbitrary rigid-body motion.<br>So, it is not an appropriate measure of the deformation.<br>Eq.(\ref{interior-energy-PK2}) shows that the second Piola–Kirchhoff stress tensor is associated with the Green–Lagrange strain tensor.<br><br/><br><br/></p>
+<ul style="list-style-type: none;">
+    <li>[1] Shabana A.A. Computational Continuum Mechanics, 3rd Edition. John Wiley & Sons, Ltd. 2018.</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Mechanics/" rel="tag"># Mechanics</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/23/%E3%80%8A%E5%A4%A7%E5%8D%AB-%E7%A7%91%E6%B3%A2%E8%8F%B2%E5%B0%94%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="《大卫.科波菲尔》读书笔记">
+      <i class="fa fa-chevron-left"></i> 《大卫.科波菲尔》读书笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/" rel="next" title="程序编译与链接">
+      程序编译与链接 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"> Tensor algebra </span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"> Conjugate stresses associated with strain: energy aspect </span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">王坤</p>
+  <div class="site-description" itemprop="description">patience is love</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王坤</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

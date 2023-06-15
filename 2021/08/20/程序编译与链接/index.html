@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Download the BLAS source and cBLAS source and copy the blas folder into cblas folder. The directory tree is as following, 123456+cblas|  +blas|  +include|  +lib|  +src|  Makefile The minGW is needed">
+  <meta name="description" content="不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。 进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。 地址重定位：编译时给程序中符号一个虚假的地址，在链接时根据地址偏移将符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cblas on Windows">
-<meta property="og:url" content="http://example.com/2019/04/01/Cblas-on-Windows/index.html">
+<meta property="og:title" content="程序编译与链接">
+<meta property="og:url" content="http://example.com/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/index.html">
 <meta property="og:site_name" content="Wang Kun">
-<meta property="og:description" content="Download the BLAS source and cBLAS source and copy the blas folder into cblas folder. The directory tree is as following, 123456+cblas|  +blas|  +include|  +lib|  +src|  Makefile The minGW is needed">
+<meta property="og:description" content="不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。 进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。 地址重定位：编译时给程序中符号一个虚假的地址，在链接时根据地址偏移将符">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-03-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-15T12:51:41.194Z">
+<meta property="article:published_time" content="2021-08-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-15T12:52:46.527Z">
 <meta property="article:author" content="王坤">
-<meta property="article:tag" content="scientific computation">
 <meta property="article:tag" content="Program linking">
+<meta property="article:tag" content="DLL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2019/04/01/Cblas-on-Windows/">
+<link rel="canonical" href="http://example.com/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Cblas on Windows | Wang Kun</title>
+  <title>程序编译与链接 | Wang Kun</title>
   
 
 
@@ -153,7 +153,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/04/01/Cblas-on-Windows/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -166,7 +166,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Cblas on Windows
+          程序编译与链接
         </h1>
 
         <div class="post-meta">
@@ -176,14 +176,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-01T00:00:00+08:00">2019-04-01</time>
+              <time title="创建时间：2021-08-20 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-20T00:00:00+08:00">2021-08-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-15 20:51:41" itemprop="dateModified" datetime="2023-06-15T20:51:41+08:00">2023-06-15</time>
+                <time title="修改时间：2023-06-15 20:52:46" itemprop="dateModified" datetime="2023-06-15T20:52:46+08:00">2023-06-15</time>
               </span>
 
           
@@ -197,14 +197,68 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ol>
-<li>Download the <a target="_blank" rel="noopener" href="http://www.netlib.org/blas/">BLAS</a> source and <a target="_blank" rel="noopener" href="http://www.netlib.org/blas/">cBLAS</a> source and copy the <code>blas</code> folder into <code>cblas</code> folder. The directory tree is as following, <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+cblas</span><br><span class="line">|  +blas</span><br><span class="line">|  +include</span><br><span class="line">|  +lib</span><br><span class="line">|  +src</span><br><span class="line">|  Makefile</span><br></pre></td></tr></table></figure></li>
-<li>The minGW is needed on windows. The <a target="_blank" rel="noopener" href="https://mingw-w64.org/">minGW-m64</a> is advanced.</li>
-<li>The file <code>xerbla.f</code> in <code>blas</code> directory is overrided by the corresponding c file in <code>src</code> directory so it should be remove away.</li>
-<li>The BLAS are written in fortran so it should be compiled by fortran compilers such as <code>gfortran</code>. The cBLAS is the c interface for call blas from c and it should be compiled by c compilers such as <code>gcc</code>. The library should be linked by <code>gfortran</code> compilers. Run the following <code>makefile</code> script in the root directory and the library file <code>cblas_x86_64.dll</code>, <code>cblas_x86_64.lib</code>, <code>cblas_x86_64.def</code> would be obtained.</li>
-</ol>
-<p>The makefile script is listed as</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">DIR_SRC=./src</span><br><span class="line">DIR_CBLAS_SRC=./cblas</span><br><span class="line"></span><br><span class="line">C_SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(DIR_SRC)</span>/*.c)</span></span><br><span class="line">C_OBJ=<span class="variable">$(<span class="built_in">patsubst</span> %.c,%.o,<span class="variable">$(SRC)</span>)</span></span><br><span class="line"></span><br><span class="line">F_BLAS_SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(DIR_BLAS_SRC)</span>/*.f)</span></span><br><span class="line">F_BLAS_OBJ=<span class="variable">$(<span class="built_in">patsubst</span> %.f,%.o,<span class="variable">$(F_BLAS_SRC)</span>)</span></span><br><span class="line"></span><br><span class="line">F_C_SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(DIR_SRC)</span>/*.f)</span></span><br><span class="line">F_C_OBJ=<span class="variable">$(<span class="built_in">patsubst</span> %.f,%.o,<span class="variable">$(F_C_SRC)</span>)</span></span><br><span class="line"></span><br><span class="line">CBLAS=cblas_x86_64.dll</span><br><span class="line"></span><br><span class="line">CC=gcc</span><br><span class="line">FC=gfortran</span><br><span class="line">CFLAGS=-I./<span class="keyword">include</span> -O3 -m64 -DADD_</span><br><span class="line">FCFLAGS=-O3 -m64</span><br><span class="line"></span><br><span class="line"><span class="section">ALL:CBLAS</span></span><br><span class="line"></span><br><span class="line"><span class="section">CBLAS:<span class="variable">$(C_OBJ)</span> <span class="variable">$(F_BLAS_OBJ)</span> <span class="variable">$(F_C_OBJ)</span></span></span><br><span class="line">	<span class="variable">$(FC)</span> -shared -o <span class="variable">$@</span> <span class="variable">$(C_OBJ)</span> <span class="variable">$(F_BLAS_OBJ)</span> <span class="variable">$(F_C_OBJ)</span> -Wl,--output-def,cblas_x86_64.def,--out-implib,cblas_x86_64.lib</span><br><span class="line"></span><br><span class="line"><span class="variable">$(C_OBJ)</span>:%.o:<span class="variable">$(DIR_SRC)</span>/%.c</span><br><span class="line">	<span class="variable">$(CC)</span> <span class="variable">$(CFLAGS)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$(F_BLAS_OBJ)</span>:%.o:<span class="variable">$(DIR_BLAS_SRC)</span>/%.f</span><br><span class="line">	<span class="variable">$(FC)</span> <span class="variable">$(FCFLAGS)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line"><span class="variable">$(F_C_OBJ)</span>:%.o:<span class="variable">$(DIR_SRC)</span>/%.f</span><br><span class="line">	<span class="variable">$(FC)</span> <span class="variable">$(FCFLAGS)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line">	</span><br><span class="line"><span class="meta"><span class="keyword">.PHONY</span>:clean</span></span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	del /f <span class="variable">$(C_OBJ)</span> <span class="variable">$(F_BLAS_OBJ)</span> <span class="variable">$(F_C_OBJ)</span></span><br></pre></td></tr></table></figure>
+        <p>不同编译器编译的目标文件可以链接的条件：需要目标文件格式相同，拥有同样的符号修饰标准，变量的内存分布方式相同，函数的调用方式相同等。</p>
+<p>进程拥有独立的虚拟地址空间。所以可执行文件中各符号的地址空间是进程虚拟地址空间，每启动一次可执行程序，都会有一个进程创建，各进程的虚拟地址空间是独立的，所以不同的程序中符号对应的地址相同也没事。</p>
+<p>地址重定位：编译时给程序中符号一个虚假的地址，在链接时根据地址偏移将符号地址重定位，即赋予真是的虚拟内存地址。</p>
+<p>动态链接库装载时重定位：程序在链接时不会重定位符号地址，在装载时会有动态链接器来进行动态库的地址重定位。</p>
+<p><strong>PIC</strong>: Position Independent Code, 地址无关代码。</p>
+<p><strong>ELF</strong> (Executable linkable format, Linux系统中可执行文件格式)中共享库默认导出所有全局函数和变量。<br><strong>DLL</strong> (Dynamic link library, windows系统中动态链接库)需要显示告诉编译器需要导出哪些符号，默认均不导出。<br><code>__declspec(dllexport)</code>表示该符号从本DLL导出<br><code>__declspec(dllimport)</code>表示该符号从其他DLL中导入<br>也可以在.def文件中声明哪些符号是导出符号<br><code>LoadLibrary(&quot;str&quot;)</code><br><code>GetProcAddress</code><br><code>FreeLibrary</code></p>
+<p>**调用惯例(Calling convention)**规定:</p>
+<ul>
+<li>函数参数的传递顺序和方式</li>
+<li>函数栈的维护方式(压入栈的参数由函数本身或者调用方弹出)</li>
+<li>名字修饰符的策略</li>
+</ul>
+<p><code>C</code>语言调用惯例：</p>
+<style>
+.tablelines table, .tablelines td, .tablelines th {border: 1px solid black;}
+.tablecells table, .tablelines td {padding-left: 1em; padding-right: 1em;}
+</style>
+
+<p>|——————+————+————–+———|</p>
+<table>
+<thead>
+<tr>
+<th align="center">Calling conventino</th>
+<th align="center">参数入栈方式</th>
+<th align="center">参数出栈执行者</th>
+<th align="left">名字修饰</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>cdecl</code></td>
+<td align="center">从右到左</td>
+<td align="center">函数调用方</td>
+<td align="left">_name</td>
+</tr>
+<tr>
+<td align="center"><code>stdcall</code></td>
+<td align="center">从右到左</td>
+<td align="center">函数本身</td>
+<td align="left">_name@byteofparameters</td>
+</tr>
+<tr>
+<td align="center"><code>fastcall</code></td>
+<td align="center">从右到左</td>
+<td align="center">函数本身</td>
+<td align="left">@name@byteofparameters</td>
+</tr>
+<tr>
+<td align="center"><code>pascal</code></td>
+<td align="center">从左到右</td>
+<td align="center">函数本身</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">{: .tablelines .tablecells}</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p><code>cdecl</code>为C语言默认调用方式，Windows API调用方式为<code>stdcall</code>。<br><code>C++</code>有独特的名字修饰策略</p>
+<p>程序的入口函数可以在链接时指定，<code>gcc</code>中由参数<code>-e</code>指定。</p>
+<p>调用惯例与编译器有关。编译器生成ELE还是PE与平台有关。</p>
 
     </div>
 
@@ -214,8 +268,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/scientific-computation/" rel="tag"># scientific computation</a>
               <a href="/tags/Program-linking/" rel="tag"># Program linking</a>
+              <a href="/tags/DLL/" rel="tag"># DLL</a>
           </div>
 
         
@@ -223,10 +277,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2019/12/22/Synchronize-the-time-on-linux-from-the-windows-ntp-server-in-the-local-network/" rel="next" title="Synchronize the time on linux from the windows ntp server in the local network">
-      Synchronize the time on linux from the windows ntp server in the local network <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/16/Conjugate-stresses-associated-with-strain/" rel="prev" title="Conjugate stresses associated with strain">
+      <i class="fa fa-chevron-left"></i> Conjugate stresses associated with strain
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/25/Siconos%E5%AE%89%E8%A3%85/" rel="next" title="Siconos安装">
+      Siconos安装 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

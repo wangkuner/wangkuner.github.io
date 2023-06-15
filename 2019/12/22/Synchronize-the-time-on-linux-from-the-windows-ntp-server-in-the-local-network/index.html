@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="patience is love">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wang Kun">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="Configure the windows as a ntp serverEnable NTPServer.  Close the firewall. Locate and then click the following registry subkey: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProvid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Synchronize the time on linux from the windows ntp server in the local network">
+<meta property="og:url" content="http://example.com/2019/12/22/Synchronize-the-time-on-linux-from-the-windows-ntp-server-in-the-local-network/index.html">
 <meta property="og:site_name" content="Wang Kun">
-<meta property="og:description" content="patience is love">
+<meta property="og:description" content="Configure the windows as a ntp serverEnable NTPServer.  Close the firewall. Locate and then click the following registry subkey: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProvid">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-15T12:52:30.378Z">
 <meta property="article:author" content="王坤">
-<meta property="article:tag" content="c&#x2F;c++">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/2019/12/22/Synchronize-the-time-on-linux-from-the-windows-ntp-server-in-the-local-network/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Wang Kun</title>
+  <title>Synchronize the time on linux from the windows ntp server in the local network | Wang Kun</title>
   
 
 
@@ -143,239 +145,97 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 10 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/22/Synchronize-the-time-on-linux-from-the-windows-ntp-server-in-the-local-network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="王坤">
+      <meta itemprop="description" content="patience is love">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wang Kun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Synchronize the time on linux from the windows ntp server in the local network
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-22 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-22T00:00:00+08:00">2019-12-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-15 20:52:30" itemprop="dateModified" datetime="2023-06-15T20:52:30+08:00">2023-06-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-12-20T00:00:00+08:00"
-              content="2022-12-20">
-          12-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/12/20/%E3%80%8A%E5%B1%80%E5%A4%96%E4%BA%BA%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">《局外人》读书笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-03-22T00:00:00+08:00"
-              content="2022-03-22">
-          03-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/03/22/Hamilton-equations/" itemprop="url">
-            <span itemprop="name">Hamilton equations</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-02T00:00:00+08:00"
-              content="2022-01-02">
-          01-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/02/%E3%80%8A%E6%B0%B8%E6%81%92%E7%9A%84%E7%BB%88%E7%BB%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">《永恒的终结》读书笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-25T00:00:00+08:00"
-              content="2021-08-25">
-          08-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/25/Siconos%E5%AE%89%E8%A3%85/" itemprop="url">
-            <span itemprop="name">Siconos安装</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-20T00:00:00+08:00"
-              content="2021-08-20">
-          08-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/20/%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5/" itemprop="url">
-            <span itemprop="name">程序编译与链接</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-16T00:00:00+08:00"
-              content="2020-03-16">
-          03-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/16/Conjugate-stresses-associated-with-strain/" itemprop="url">
-            <span itemprop="name">Conjugate stresses associated with strain</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-23T20:36:59+08:00"
-              content="2020-02-23">
-          02-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/02/23/%E3%80%8A%E5%A4%A7%E5%8D%AB-%E7%A7%91%E6%B3%A2%E8%8F%B2%E5%B0%94%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">《大卫.科波菲尔》读书笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-25T00:00:00+08:00"
-              content="2019-12-25">
-          12-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/25/Local-git-server/" itemprop="url">
-            <span itemprop="name">Local-git-server</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-22T00:00:00+08:00"
-              content="2019-12-22">
-          12-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/22/Synchronize-the-time-on-linux-from-the-windows-ntp-server-in-the-local-network/" itemprop="url">
-            <span itemprop="name">Synchronize the time on linux from the windows ntp server in the local network</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-04-01T00:00:00+08:00"
-              content="2019-04-01">
-          04-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/04/01/Cblas-on-Windows/" itemprop="url">
-            <span itemprop="name">Cblas on Windows</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="Configure-the-windows-as-a-ntp-server"><a href="#Configure-the-windows-as-a-ntp-server" class="headerlink" title="Configure the windows as a ntp server"></a>Configure the windows as a ntp server</h2><p>Enable NTPServer.</p>
+<ol>
+<li>Close the firewall.</li>
+<li>Locate and then click the following registry subkey: <strong>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer</strong>.</li>
+<li>Modify the value to be <strong>1</strong> to enable the ntp server.</li>
+<li>Run command <code>net stop w32time</code> as administrator if the w32time service is running.</li>
+<li>Run command <code>net start w32time</code> as administrator to start w32time service.</li>
+</ol>
+<h2 id="Synchronize-the-time-on-linux"><a href="#Synchronize-the-time-on-linux" class="headerlink" title="Synchronize the time on linux"></a>Synchronize the time on linux</h2><p>Run <code>ntpdate ntp_server_ip</code> as root. the ntp service should be stopped first if “<em>ntp socket is in use</em>“ is returned.<br>Run <code>service ntpd stop</code> and then execute <code>ntpdate ntp_server_ip</code>.</p>
 
     </div>
-  </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/01/Cblas-on-Windows/" rel="prev" title="Cblas on Windows">
+      <i class="fa fa-chevron-left"></i> Cblas on Windows
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/25/Local-git-server/" rel="next" title="Local-git-server">
+      Local-git-server <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -428,6 +288,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Configure-the-windows-as-a-ntp-server"><span class="nav-number">1.</span> <span class="nav-text">Configure the windows as a ntp server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synchronize-the-time-on-linux"><span class="nav-number">2.</span> <span class="nav-text">Synchronize the time on linux</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -216,6 +216,78 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/04/01/Cblas-on-Windows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="王坤">
+      <meta itemprop="description" content="patience is love">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wang Kun">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/01/Cblas-on-Windows/" class="post-title-link" itemprop="url">Cblas on Windows</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-01T00:00:00+08:00">2019-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-15 20:27:00" itemprop="dateModified" datetime="2023-06-15T20:27:00+08:00">2023-06-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Cblas-on-Windows"><a href="#Cblas-on-Windows" class="headerlink" title="Cblas on Windows"></a>Cblas on Windows</h1><ol>
+<li>Download the <a target="_blank" rel="noopener" href="http://www.netlib.org/blas/">BLAS</a> source and <a target="_blank" rel="noopener" href="http://www.netlib.org/blas/">cBLAS</a> source and copy the <code>blas</code> folder into <code>cblas</code> folder. The directory tree is as following, <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+cblas</span><br><span class="line">|  +blas</span><br><span class="line">|  +include</span><br><span class="line">|  +lib</span><br><span class="line">|  +src</span><br><span class="line">|  Makefile</span><br></pre></td></tr></table></figure></li>
+<li>The minGW is needed on windows. The <a target="_blank" rel="noopener" href="https://mingw-w64.org/">minGW-m64</a> is advanced.</li>
+<li>The file <code>xerbla.f</code> in <code>blas</code> directory is overrided by the corresponding c file in <code>src</code> directory so it should be remove away.</li>
+<li>The BLAS are written in fortran so it should be compiled by fortran compilers such as <code>gfortran</code>. The cBLAS is the c interface for call blas from c and it should be compiled by c compilers such as <code>gcc</code>. The library should be linked by <code>gfortran</code> compilers. Run the following <code>makefile</code> script in the root directory and the library file <code>cblas_x86_64.dll</code>, <code>cblas_x86_64.lib</code>, <code>cblas_x86_64.def</code> would be obtained.</li>
+</ol>
+<p>The makefile script is listed as</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">DIR_SRC=./src</span><br><span class="line">DIR_CBLAS_SRC=./cblas</span><br><span class="line"></span><br><span class="line">C_SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(DIR_SRC)</span>/*.c)</span></span><br><span class="line">C_OBJ=<span class="variable">$(<span class="built_in">patsubst</span> %.c,%.o,<span class="variable">$(SRC)</span>)</span></span><br><span class="line"></span><br><span class="line">F_BLAS_SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(DIR_BLAS_SRC)</span>/*.f)</span></span><br><span class="line">F_BLAS_OBJ=<span class="variable">$(<span class="built_in">patsubst</span> %.f,%.o,<span class="variable">$(F_BLAS_SRC)</span>)</span></span><br><span class="line"></span><br><span class="line">F_C_SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(DIR_SRC)</span>/*.f)</span></span><br><span class="line">F_C_OBJ=<span class="variable">$(<span class="built_in">patsubst</span> %.f,%.o,<span class="variable">$(F_C_SRC)</span>)</span></span><br><span class="line"></span><br><span class="line">CBLAS=cblas_x86_64.dll</span><br><span class="line"></span><br><span class="line">CC=gcc</span><br><span class="line">FC=gfortran</span><br><span class="line">CFLAGS=-I./<span class="keyword">include</span> -O3 -m64 -DADD_</span><br><span class="line">FCFLAGS=-O3 -m64</span><br><span class="line"></span><br><span class="line"><span class="section">ALL:CBLAS</span></span><br><span class="line"></span><br><span class="line"><span class="section">CBLAS:<span class="variable">$(C_OBJ)</span> <span class="variable">$(F_BLAS_OBJ)</span> <span class="variable">$(F_C_OBJ)</span></span></span><br><span class="line">	<span class="variable">$(FC)</span> -shared -o <span class="variable">$@</span> <span class="variable">$(C_OBJ)</span> <span class="variable">$(F_BLAS_OBJ)</span> <span class="variable">$(F_C_OBJ)</span> -Wl,--output-def,cblas_x86_64.def,--out-implib,cblas_x86_64.lib</span><br><span class="line"></span><br><span class="line"><span class="variable">$(C_OBJ)</span>:%.o:<span class="variable">$(DIR_SRC)</span>/%.c</span><br><span class="line">	<span class="variable">$(CC)</span> <span class="variable">$(CFLAGS)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$(F_BLAS_OBJ)</span>:%.o:<span class="variable">$(DIR_BLAS_SRC)</span>/%.f</span><br><span class="line">	<span class="variable">$(FC)</span> <span class="variable">$(FCFLAGS)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line"><span class="variable">$(F_C_OBJ)</span>:%.o:<span class="variable">$(DIR_SRC)</span>/%.f</span><br><span class="line">	<span class="variable">$(FC)</span> <span class="variable">$(FCFLAGS)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br><span class="line">	</span><br><span class="line"><span class="meta"><span class="keyword">.PHONY</span>:clean</span></span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	del /f <span class="variable">$(C_OBJ)</span> <span class="variable">$(F_BLAS_OBJ)</span> <span class="variable">$(F_C_OBJ)</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
 
@@ -282,9 +354,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
